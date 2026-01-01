@@ -1,10 +1,14 @@
 title: "ExplainMath"
 description: "A Python library that prevents silent numeric failures."
-theme: "just-the-docs"
 
-# Navigation
+# Enable Just The Docs theme
+remote_theme: just-the-docs/just-the-docs
+markdown: kramdown
+
+# Website navigation
 nav_order: 1
 
+# Theme settings
 just_the_docs:
   search_enabled: true
   heading_anchors: true
