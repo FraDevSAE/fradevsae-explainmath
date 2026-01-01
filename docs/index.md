@@ -1,3 +1,8 @@
+---
+title: ExplainMath
+layout: default
+---
+
 # 🔢 ExplainMath
 
 > **Safe numeric operations for Python**  
@@ -6,17 +11,6 @@
 
 [Get Started](getting-started.md){ .btn .btn-primary }  
 [Examples](examples.md){ .btn }   [API Docs](api.md){ .btn }
-
-
----
-title: ExplainMath
-layout: default
----
-
-# 🔢 ExplainMath
-
-**A lightweight Python library that prevents silent numeric failures and explains why math breaks.**  
-No more hidden `NaN`, no more silent infinities — errors become visible, traceable, and safe.
 
 ---
 
