@@ -5,8 +5,12 @@ nav_order: 1
 
 # 🔢 ExplainMath
 
-> **Safe numeric operations for Python — no silent NaN or infinite propagation.**  
+> **Safe numeric operations for Python — no silent NaN or infinities.**  
 > Clear errors. Traceable failures. Math you can trust.
+
+[Get Started](getting-started.md){ .btn .btn-primary }
+[Examples](examples.md){ .btn }
+[API Docs](api.md){ .btn }
 
 ---
 
@@ -15,14 +19,15 @@ nav_order: 1
 ```bash
 pip install explainmath
 💡 Why ExplainMath?
-Normal Python:
+In plain Python:
+
 python
 Copy code
-x = 10 / 0         # crash
+x = 10 / 0         # crashes
 y = float("nan")   # silently spreads
-Failures propagate, bugs stay hidden.
+Silent numeric failures make debugging guesswork.
+ExplainMath stops that.
 
-With ExplainMath:
 python
 Copy code
 from explainmath import Value
@@ -33,7 +38,7 @@ c = a.div(b)
 
 print(c.is_valid())      # False
 print(c.explanation)     # "Division by zero while evaluating 10 / 0"
-🧪 Strict Mode (safe-by-default)
+🧪 Strict Mode
 python
 Copy code
 from explainmath import Value, SemanticError
@@ -50,15 +55,16 @@ from explainmath import Value
 Value(10).add(Value(5)).value      # 15
 Value(10).div(Value(0)).is_valid() # False
 📈 Roadmap
-Feature	Status
-v0.1.1 Core + PyPI published	✅ Done
-v0.2 Provenance tracking	⏳ Next
-ExplainMath Pro (visual trace)	Planned
-SAE integration long-term	Vision
+v0.2 — History tracking
+
+ExplainMath Pro — visual traces & reports
+
+SAE integration — long-term vision
 
 🌐 Links
-🔗 PyPI: https://pypi.org/project/explainmath
-🔗 GitHub: https://github.com/FraDevSAE/fradevsae-explainmath
-🔗 Examples Folder: https://github.com/FraDevSAE/fradevsae-explainmath/tree/main/examples
+PyPI → https://pypi.org/project/explainmath
 
-Minimal. Transparent. Reliable math.
+GitHub → https://github.com/FraDevSAE/fradevsae-explainmath
+
+Minimal. Safe. Transparent.
+For developers tired of chasing NaN through pipelines.
