@@ -1,86 +1,66 @@
-fradevsae-explainmath
+---
+title: ExplainMath
+layout: default
+---
 
-🔢 ExplainMath
+# 🔢 ExplainMath
 
-A small Python library that stops silent numeric failures and explains why math breaks.
+**A lightweight Python library that prevents silent numeric failures and explains why math breaks.**  
+No more hidden `NaN`, no more silent infinities — errors become visible, traceable, and safe.
 
+---
 
+## 🚀 Install
 
+```bash
+pip install explainmath
+💡 Why ExplainMath?
+In plain Python:
 
-🚀 Install
+python
+Copy code
+x = 10 / 0         # crashes
+y = float("nan")    # silently infects computations
+Silent numeric failures make debugging guesswork.
+ExplainMath stops that.
 
-```bash pip install explainmath ```
+python
+Copy code
+from explainmath import Value
 
+a = Value(10)
+b = Value(0)
+c = a.div(b)
 
-
-
-💡 What problem does it solve?
-
-In normal Python:
-
-```python x = 10 / 0 # crash y = float("nan") # spreads silently
-
-Silent numeric failures poison data pipelines. Debugging becomes guesswork.
-
-```
-
-ExplainMath catches failure at the moment it happens:
-
-```python from explainmath import Value
-
-a = Value(10) b = Value(0) c = a.div(b)
-
-print(c.is_valid()) # False print(c.explanation) # "Division by zero while evaluating 10 / 0" ```
-
-
-
-
+print(c.is_valid())      # False
+print(c.explanation)     # "Division by zero while evaluating 10 / 0"
 🧪 Strict Mode
+python
+Copy code
+from explainmath import Value, SemanticError
 
-```python from explainmath import Value, SemanticError
+try:
+    Value(10).div(Value(0)).require()
+except SemanticError as e:
+    print("Error caught:", e)
+📦 Quick Examples
+python
+Copy code
+from explainmath import Value
 
-try: Value(10).div(Value(0)).require() except SemanticError as e: print("Error caught:", e) ```
-
-
-
-
-📦 Examples
-
-```python from explainmath import Value
-
-Value(10).add(Value(5)).value # 15 Value(10).div(Value(0)).is_valid() # False
-
-See more in examples/
-
-```
-
-
-
-
+Value(10).add(Value(5)).value      # 15
+Value(10).div(Value(0)).is_valid() # False
 📈 Roadmap
+v0.2 — History tracking
 
-•
-v0.2 → History & provenance tracking
+ExplainMath Pro — visual traces & reports
 
-•
-ExplainMath Pro → Visual traces, report export
-
-•
-SAE SDK integration → long-term vision
-
-
-
+SAE integration — long-term
 
 🌐 Links
+PyPI → https://pypi.org/project/explainmath
 
-•
-🔗 PyPI: https://pypi.org/project/explainmath
+GitHub → https://github.com/FraDevSAE/fradevsae-explainmath
 
-•
-🔗 GitHub: https://github.com/FraDevSAE/fradevsae-explainmath
-
-
-
-
-Made for developers who hate debugging NaN. Minimal. Safe. Clear.
-
+Minimal. Safe. Transparent.
+For developers who are tired of chasing NaN through pipelines.
