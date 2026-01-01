@@ -1,3 +1,13 @@
+# 🔢 ExplainMath
+
+> **Safe numeric operations for Python**  
+> No more silent NaN. No more hidden infinities.  
+> Clean errors. Clear explanations.
+
+[Get Started](getting-started.md){ .btn .btn-primary }  
+[Examples](examples.md){ .btn }   [API Docs](api.md){ .btn }
+
+
 ---
 title: ExplainMath
 layout: default
