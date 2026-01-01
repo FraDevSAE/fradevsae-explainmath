@@ -8,8 +8,9 @@ nav_order: 1
 > **Safe numeric operations for Python — no silent NaN or infinities.**  
 > Clear errors. Traceable failures. Math you can trust.
 
-[Get Started](getting-started.md){ .btn .btn-primary }  
-[Examples](examples.md){ .btn } [API Docs](api.md){ .btn }
+[Get Started](getting-started.md){ .btn .btn-primary }
+[Examples](examples.md){ .btn }
+[API Docs](api.md){ .btn }
 
 ---
 
@@ -23,7 +24,7 @@ In plain Python:
 python
 Copy code
 x = 10 / 0         # crashes
-y = float("nan")    # silently spreads
+y = float("nan")   # silently spreads
 Silent numeric failures make debugging guesswork.
 ExplainMath stops that.
 
@@ -66,4 +67,4 @@ PyPI → https://pypi.org/project/explainmath
 GitHub → https://github.com/FraDevSAE/fradevsae-explainmath
 
 Minimal. Safe. Transparent.
-For developers who are tired of chasing NaN through pipelines.
+For developers tired of chasing NaN through pipelines.
