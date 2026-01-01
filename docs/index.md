@@ -5,7 +5,7 @@ nav_order: 1
 
 # 🔢 ExplainMath
 
-> **Safe numeric operations for Python — no silent NaN or infinities.**  
+> **Safe numeric operations for Python — no silent NaN or infinite propagation.**  
 > Clear errors. Traceable failures. Math you can trust.
 
 [Get Started](getting-started.md){ .btn .btn-primary }
@@ -26,6 +26,7 @@ Copy code
 x = 10 / 0         # crashes
 y = float("nan")   # silently spreads
 Silent numeric failures make debugging guesswork.
+
 ExplainMath stops that.
 
 python
@@ -54,17 +55,19 @@ from explainmath import Value
 
 Value(10).add(Value(5)).value      # 15
 Value(10).div(Value(0)).is_valid() # False
+See more examples here:
+🔗 https://github.com/FraDevSAE/fradevsae-explainmath/tree/main/examples
+
 📈 Roadmap
-v0.2 — History tracking
-
-ExplainMath Pro — visual traces & reports
-
-SAE integration — long-term vision
+Version	Feature
+v0.2	Operation history & provenance tracking
+Pro	Visual trace graphs + error reports
+Future	SAE Semantic Engine integration
 
 🌐 Links
-PyPI → https://pypi.org/project/explainmath
+PyPI: https://pypi.org/project/explainmath
 
-GitHub → https://github.com/FraDevSAE/fradevsae-explainmath
+GitHub: https://github.com/FraDevSAE/fradevsae-explainmath
 
 Minimal. Safe. Transparent.
 For developers tired of chasing NaN through pipelines.
