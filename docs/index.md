@@ -16,22 +16,24 @@ Clear errors. Traceable failures. Math you can trust.
 
 ## 🚀 Install
 
-```bash
+\`\`\`bash
 pip install explainmath
-```
+\`\`\`
 
-💡 Why ExplainMath?
+---
+
+## 💡 Why ExplainMath?
+
 In plain Python:
 
-python
-Copy code
+\`\`\`python
 x = 10 / 0         # crashes
 y = float("nan")   # silently spreads
-Silent numeric failures make debugging guesswork.
-ExplainMath stops that.
+# Silent numeric failures make debugging guesswork.
+# ExplainMath stops that.
+\`\`\`
 
-python
-Copy code
+\`\`\`python
 from explainmath import Value
 
 a = Value(10)
@@ -40,28 +42,41 @@ c = a.div(b)
 
 print(c.is_valid())      # False
 print(c.explanation)     # "Division by zero while evaluating 10 / 0"
-🧪 Strict Mode
-python
-Copy code
+\`\`\`
+
+---
+
+## 🧪 Strict Mode
+
+\`\`\`python
 from explainmath import Value, SemanticError
 
 try:
     Value(10).div(Value(0)).require()
 except SemanticError as e:
     print("Error caught:", e)
-📦 Quick Examples
-python
-Copy code
+\`\`\`
+
+---
+
+## 📦 Quick Examples
+
+\`\`\`python
 from explainmath import Value
 
 Value(10).add(Value(5)).value      # 15
 Value(10).div(Value(0)).is_valid() # False
-📈 Roadmap
-v0.2 — History tracking
+\`\`\`
 
-ExplainMath Pro — visual traces & reports
+---
 
-SAE integration — long-term vision
+## 📈 Roadmap
+
+*   **v0.2** — History tracking
+*   **ExplainMath Pro** — visual traces & reports
+*   **SAE integration** — long-term vision
+
+---
 
 Minimal. Safe. Transparent.
 For developers tired of chasing NaN through pipelines.
