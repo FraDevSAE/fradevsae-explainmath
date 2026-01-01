@@ -1,7 +1,10 @@
 title: "ExplainMath"
 description: "A Python library that prevents silent numeric failures."
-theme: jekyll-theme-cayman
-markdown: kramdown
+theme: "just-the-docs"
 
-# Enable ordering for sidebar navigation
+# Navigation
 nav_order: 1
+
+just_the_docs:
+  search_enabled: true
+  heading_anchors: true
