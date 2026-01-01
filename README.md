@@ -32,36 +32,42 @@ print(result)   # nan ... now what?
 
 ## 🚀 Quick Start
 
+## 📦 Examples
+
+### Basic addition
+
 \`\`\`python
-from core.value import Value
+from explainmath import Value
+
+a = Value(10)
+b = Value(5)
+print(a.add(b).value)  # 15
+\`\`\`
+
+### Invalid Division
+
+\`\`\`python
+from explainmath import Value
 
 a = Value(10)
 b = Value(0)
-
 c = a.div(b)
-
-print(c.is_valid())      # False
-print(c.explanation)     # "Division by zero while evaluating 10 / 0"
+print(c.is_valid())        # False
+print(c.explanation)       # "Division by zero while evaluating 10 / 0"
 \`\`\`
 
 ## 🔒 Strict Mode Example (Fail Fast)
 
-Useful when you want invalid math to stop execution immediately.
-
 \`\`\`python
-from core.value import Value
+from explainmath import Value, SemanticError
 
-a = Value(10)
-b = Value(0)
-
-c = a.div(b)
-
-c.require()   # Raises SemanticError with explanation
+try:
+    Value(10).div(Value(0)).require()
+except SemanticError as e:
+    print("Error caught:", e)
 \`\`\`
 
 ## 🧪 Running Tests
-
-Unit tests ensure math behavior is safe, predictable, and stable:
 
 \`\`\`bash
 python -m unittest discover -v
@@ -100,3 +106,4 @@ This project is licensed under the **MIT License**.
 ---
 
 *Made with curiosity, logic, and a desire to reduce silent math bugs.*
+
