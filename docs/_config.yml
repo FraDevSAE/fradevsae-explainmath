@@ -1,2 +1,20 @@
-theme: jekyll-theme-cayman
+title: "ExplainMath"
+description: "Safe numeric handling for Python — no silent NaN or inf."
+theme: just-the-docs
+color_scheme: light
+
 markdown: kramdown
+
+# Enable sidebar navigation
+just_the_docs:
+  logo: "/assets/logo.png"   # optional if you later add one
+  search_enabled: true
+  heading_anchors: true
+
+# Navigation order
+nav_order: 1
+
+# Optional future pages
+collections:
+  docs:
+    output: true
