@@ -1,20 +1,7 @@
 title: "ExplainMath"
-description: "Safe numeric handling for Python — no silent NaN or inf."
-theme: just-the-docs
-color_scheme: light
-
+description: "A Python library that prevents silent numeric failures."
+theme: jekyll-theme-cayman
 markdown: kramdown
 
-# Enable sidebar navigation
-just_the_docs:
-  logo: "/assets/logo.png"   # optional if you later add one
-  search_enabled: true
-  heading_anchors: true
-
-# Navigation order
+# Enable ordering for sidebar navigation
 nav_order: 1
-
-# Optional future pages
-collections:
-  docs:
-    output: true
